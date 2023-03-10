@@ -4,13 +4,13 @@ import '../models/movies.dart';
 import '../services/API_services.dart';
 import '../screens/description.dart';
 
-class TrendingMovies extends StatelessWidget {
+class PopularTVShows extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
       child: FutureBuilder(
-          future: APIServices.getNowPlaying(),
+          future: APIServices.getTopRatedTVShows(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
@@ -27,7 +27,7 @@ class TrendingMovies extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 modified_text(
-                  text: 'Now Playing Movies',
+                  text: 'Popular TV Shows',
                   size: 26,
                 ),
                 SizedBox(height: 10),
@@ -54,8 +54,8 @@ class TrendingMovies extends StatelessWidget {
                                                 trending[index].poster_path,
                                             vote:
                                                 trending[index].vote_average,
-                                                id:
-                                                trending[index].id
+                                            id:
+                                                trending[index].id,
                                           ))));
                             },
                             child: Container(

@@ -1,5 +1,6 @@
 class Movie {
   final String backdrop_path;
+  final int id;
   final String original_language;
   final String original_title;
   final String overview;
@@ -22,10 +23,12 @@ class Movie {
     required this.poster_path,
     required this.popularity,
     required this.title,
+    required this.id,
   });
   factory Movie.fromJson(dynamic json) {
     return Movie(
       backdrop_path: json['backdrop_path'],
+      id: json['id'],
       original_language: json['original_language'],
       original_title: json['original_title'],
       overview: json['overview'],

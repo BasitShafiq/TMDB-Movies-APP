@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../utils/text.dart';
 import '../models/movies.dart';
 import '../services/API_services.dart';
+import '../screens/description.dart';
 
 class PopularMovies extends StatelessWidget {
   @override
@@ -37,7 +38,26 @@ class PopularMovies extends StatelessWidget {
                         itemCount: trending.length,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: ((context) => Description(
+                                            name: trending[index].title,
+                                            bannerurl:'https://image.tmdb.org/t/p/w500' +
+                                                trending[index].backdrop_path,
+                                            description:
+                                                trending[index].overview,
+                                            launch_on:
+                                                trending[index].release_date,
+                                            posterurl:'https://image.tmdb.org/t/p/w500' +
+                                                trending[index].poster_path,
+                                            vote:
+                                                trending[index].vote_average,
+                                            id:
+                                                trending[index].id,
+                                          ))));
+                            },
                             child: Container(
                               width: 140,
                               child: Column(

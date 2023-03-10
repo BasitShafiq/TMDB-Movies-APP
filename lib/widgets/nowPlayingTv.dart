@@ -5,14 +5,14 @@ import '../services/API_services.dart';
 import '../screens/description.dart';
 
 
-class TV extends StatelessWidget {
+class NowPlayingTV extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
       child: FutureBuilder(
-          future: APIServices.getTopRated(),
+          future: APIServices.getTopRatedTVShows(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
@@ -29,7 +29,7 @@ class TV extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               modified_text(
-                text: 'Top Rated Movies',
+                text: 'Upcoming Movies',
                 size: 26,
               ),
               SizedBox(height: 10),

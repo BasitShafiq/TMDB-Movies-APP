@@ -3,6 +3,8 @@ import './utils/text.dart';
 import './widgets/trending.dart';
 import './widgets/popular.dart';
 import './widgets/tv.dart';
+import './widgets/nowPlayingTv.dart';
+import './widgets/populatTv.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,6 +42,8 @@ class _HomeState extends State<Home> {
             TV(),
             TrendingMovies(),
             PopularMovies(),
+            NowPlayingTV(),
+           // PopularTVShows(),
           ],
         ));
   }
