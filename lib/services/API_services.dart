@@ -3,9 +3,9 @@ import '../models/movies.dart';
 import 'package:http/http.dart' as http;
 import 'package:tmdb_api/tmdb_api.dart';
 
-final apiKey = "61daee876b572535242a24438978b707";
+final apiKey = "api_key";
 final readAccessToken =
-    "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MWRhZWU4NzZiNTcyNTM1MjQyYTI0NDM4OTc4YjcwNyIsInN1YiI6IjY0MDRjOTU5MDIxY2VlMDBkYTM2YzhlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JqareyJ5banCIKGGHnl9V3M1xlh2djmZroqlLpfYfyw";
+    "Token";
 
 class APIServices {
   static Future<List<Movie>> getTopRated() async {
